@@ -1,0 +1,108 @@
+.formulario{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 70vh;
+    width: 60%;
+	margin: -20px 0 50px;
+    background: rgba(0,0,0,.1);
+    backdrop-filter: blur(50px);
+    border-color: #fde6f9;
+    background: rgba(0, 0, 0,.2);
+    border-radius: 15px;
+    margin-right: 50px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-style: solid;
+}  
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%; 
+    padding: 10px; 
+    text-align: center;
+}
+
+.result-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    padding: 10px; 
+}
+
+.result-container h2 {
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    margin: 0; 
+    color: white; 
+}
+
+:root {
+    --result-color: white;
+}
+
+.result-container p.green {
+    color: green;
+}
+
+.result-container p.yellow {
+    color: yellow;
+}
+
+.result-container p.red {
+    color: red;
+}
+
+.result-container p.darkgreen {
+    color: darkgreen;
+}
+
+.result-container p.white {
+    color: #FFFFFF;
+}
+
+.result-container p {
+    color: var(--result-color); 
+    font-size: 50px; 
+    text-align: right;
+}
+
+#valor-inserido {
+    position: relative;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold; 
+    align-items: left;
+    display: flex;
+    align-items: center;
+  }
+
+  .result-container figcaption {
+    font-size: 14px; 
+    color: #FFFFFF; 
+    position: relative;
+    top: 300%;
+  }
+
+  .result-container i {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .texto p {
+    margin-bottom: 5px; 
+    color: #FFFFFF;
+    font-size: 12px;
+    align-items: center;
+    position: relative;
+  }

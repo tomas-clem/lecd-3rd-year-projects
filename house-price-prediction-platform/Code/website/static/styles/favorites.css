@@ -1,0 +1,92 @@
+button {
+	border-radius: 20px;
+	border: 1px solid #aa8fb2;
+	background-color: #aa8fb2;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    right: 5%; bottom: 15px;
+	position: absolute;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+/*===============================*/
+
+button1 {
+	color: #FFFFFF;
+	font-size: 35px;
+	padding: 12px 20px;
+	transition: transform 80ms ease-in;
+    right: -85%; top: -70px;
+	position: relative;
+}
+
+button1:active {
+	transform: scale(0.95);
+}
+
+button1:focus {
+	outline: none;
+}
+
+/*===============================*/
+
+.content{
+	position: relative;
+    left:5%;
+    top: 20px;
+    color:#ffffff;
+	min-height: 120px;
+}
+.house{
+	display: flex;
+	border-color: #fde6f9;
+	background: rgba(0, 0, 0,.2);
+	backdrop-filter: blur(50px);
+	border-radius: 15px;
+	margin-right: 50px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-style: solid;
+}
+.load-more{
+	position: fixed;
+	bottom: 5%;
+	right: 3.5%;
+}
+.map{
+	left: 1.5%; position: relative; top: 1.5%; border-radius: 15px;
+}
+.icon{
+	position: -webkit-sticky;
+	position: sticky;
+	font-size: 65px;
+	color: #ffffff;
+	left: 84%;
+	padding-top: 135px;
+}
+a i{
+	transition: all 0.2s linear;
+}
+.icon :hover{
+	transform: scale(1.35);
+}

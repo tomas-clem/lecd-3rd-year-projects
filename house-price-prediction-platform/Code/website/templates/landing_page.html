@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prevemos</title>
+    <title>Prevemos</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/landing_page.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+   <header class="header">
+    
+    <button type="button" class="button">
+      <span class="button__image">
+        <img style="height: 60px; margin: -5px 0px 0px 0px;" src="{{ url_for('static',filename='images/logo.png') }}">
+      </span>
+      <span class="button__text">Prevemos</span>
+    </button>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+    </label>
+    <nav class="navbar">
+        <a href="#avaliar">Avalie a sua casa</a>
+        <a href="#">Funcionalidades</a>
+        <a href="#">Porquê a Prevemos?</a>
+        <a href="/login">Login</a>
+    </nav>
+   </header>
+   <div class="back_ground" id="avaliar">
+    <h1>Avalie já o seu Imóvel</h1>
+    <p>Torne-se um especialista no mercado português</p>
+    <form class="avaliar" action="/prever" id="avaliar-form" role="search" style="margin-left: 12.5%;">
+        <input type="search" id="query" name="q"
+         placeholder="Introduza a morada do seu imovel..."
+         aria-label="Search through site content">
+        <button class="search-button">    <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
+      </form>
+   </div>
+
+   <div class="back_ground" id="prevemos">
+    <h1>Porquê a Prevemos?</h1>
+    <p class="p1">Se está a pensar em comprar, vender ou investir num imóvel, a Prevemos é sua aliada. Ao definir as 
+      caraterísticas do imóvel em questão apresentamos-lhe sempre a solução que vai de encontro ao mercado português.</p>
+    <p> </p>
+    <div style="display: inline-flex; justify-content: center; align-items: center;">
+      <div>
+        <p class="p1">A Prevemos é a ferramenta que simplifica a avaliação do seu imóvel. Com apenas alguns cliques, 
+          você pode obter uma estimativa precisa do valor atual do seu património. Não é necessário esperar por agências 
+          imobiliárias ou pagar taxas exorbitantes para a avaliação do seu imóvel. A Prevemos coloca o poder nas suas mãos.</p>
+        <p> </p>
+        <p class="p1">Através de uma série temporal detalhada, a Prevemos mostra como o preço estimado do seu imóvel tem 
+          variado ao longo do tempo. Você pode facilmente identificar tendências de valorização ou desvalorização. Essa 
+          informação é crucial para tomar decisões informadas sobre a venda, retenção, compra ou investimento do seu imóvel. 
+          Gestão de expectativas de preço nunca foi tão simples.</p> 
+      </div>
+      <img style="width: 300px; height: 300px; margin-right: 43px;" src="{{ url_for('static',filename='images/robot.png') }}">
+    </div>
+    <p> </p>
+    <p> </p>
+    <div style="display: inline-flex; justify-content: center; align-items: center;">
+      <img style="width: 300px; height: 300px; margin-left: 43px;" src="{{ url_for('static',filename='images/guy_graphic.png') }}">
+      <div>
+        <p class="p1">Embora a Prevemos seja um sistema poderoso, não substitui uma agência imobiliária tradicional. 
+          Não temos acesso a todas as informações detalhadas sobre o imóvel, o que pode afetar o valor final. Portanto, 
+          tome suas decisões com cautela e considere consultar um profissional.</p>
+        <p class="p1">Não nos responsabilizamos por más escolhas, mas estamos aqui para facilitar o processo.</p>
+      </div>
+    </div>
+    
+
+   </div>
+
+   <div class="back_ground" id="funcionalidades">
+    <h1>Funcionalidades</h1>
+    <div style="display: inline-flex; justify-content: center; align-items: center;">
+      <div>
+        <p class="p1">A Prevemos tem bastantes funcionalidades que lhe podem fornecer ajuda a qualquer hora e em qualquer lugar:</p> 
+        <p> </p> 
+        <ul>
+          <li>Avaliar um Imóvel</li>
+          <li>Analisar Tendências de Imóveis Semelhantes</li>
+          <li>Ver Distribuição no Mercado</li>
+          <li>Guardar um Imóvel como Favorito</li>
+          <li>Indicação das Carateísticas mais Valiosas de um Imóvel</li>
+          <li>Ver Histórico de preços de um Imóvel</li>
+          <li>Entre outros</li>
+        </ul> 
+      </div>
+      <img style="width: 300px; height: 300px; margin-right: 1.5%;" src="{{ url_for('static',filename='images/rocket.png') }}">
+    </div>       
+   </div>
+   <p> </p>
+   <p> </p>
+  <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={google_maps_api_key}&callback=initMap&libraries=places&v=weekly" defer></script>
+  <script type ="text/javascript" src="{{ url_for('static',filename='scripts/landing_page.js') }}"></script>
+</body>
+  
+</html>

@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/house.css') }}">
+{% endblock %}
+{% block scripts %}
+<script type ="text/javascript" src="{{ url_for('static',filename='scripts/house.js') }}"></script>
+{% endblock %}
+{% block content %}
+<h1>{{house.address}}</h1>
+<div class="content">
+    <div class="left-side">
+        <img class="map" src="https://maps.googleapis.com/maps/api/staticmap?center={{house.lat}},{{house.lon}}&zoom=12&size=375x375&key={google_maps_api_key}" alt="" style="display: inline-block;">
+        <button type="button">
+            Receber alertas do imovel
+        </button>
+        <button onclick="location.href='{{url_for('avalia',id=house.house_id)}}'" type="button">
+            Prever preço do imóvel
+        </button>
+    </div>
+<div class="description">
+    <ul>
+        <li>
+            <h3>Nº de Quartos:  <span class="data">{{house.typology}}</span></h3>
+        </li>
+        <li>
+            <h3>Area:  <span class="data">{{house.area}} m2</span></h3>
+        </li>
+        <li>
+            <h3>Data de construção:  <span class="data">{{house.age}}</span></h3>
+        </li>
+        <li>
+            <h3>Certificado Energético:  <span class="data">{{house.energy_certificate}}</span></h3>
+        </li>
+        <li>
+            
+        </li>
+    </ul>
+</div>
+<div class="extras">
+    <h3>Extras:  <span class="data"><ul>{% for extra in house.extras %} <li>{{extra}}</li>  {% endfor %}</ul></span></h3>
+</div>
+
+
+<div id="chart"></div>
+
+
+</div>
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    var graph  = {{graphJSON | safe}};
+    Plotly.plot("chart",graph,{})
+
+</script>
+{% endblock %}

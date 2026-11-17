@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prevemos</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/change_pswd.css') }}">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div>
+        <form class="form-container" action="" id="reset-form" method="post">
+            <h1>Repor Palavra-Passe</h1>
+            <p>Deixe-nos mandar-lhe um email com um link para repor a sua palavra-passe</p>
+            <input type="email" name="email" placeholder="Email" />
+            <button>Enviar email</button>
+            <p style="font-weight: bold;" id="reset-message"></p>
+        </form>  
+      </div>  
+    </div>
+    <script type ="text/javascript" src="{{ url_for('static',filename='scripts/reset.js') }}"></script>
+  </body>
+</html>
+

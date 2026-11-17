@@ -1,0 +1,79 @@
+
+.content{
+    width: 90%; display: flex; position: absolute; top: 15%;left: 10%;
+	height: 800px;
+	color: #FFFFFF;
+}
+.left-side{
+    display: inline-block;
+    width: 40%;
+    right: 5%;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+}
+li{
+	list-style-type: none;
+	margin-bottom: 10px; 
+}
+.data{
+	display: block;
+	text-align: center;
+	border-radius: 15px;
+	background: rgba(0, 0, 0,.2);
+	backdrop-filter: blur(50px);
+	padding: 5px 8px 5px 8px;
+}
+button {
+	border-radius: 15px;
+	border: 1px solid #aa8fb2;
+	background-color: #aa8fb2;
+	color: #FFFFFF;
+    width: 80%;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    right: 5%; bottom: 15px;
+    margin-top: 10px;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+.map{
+	left: 1.5%;
+    position: relative;
+    top: 1.5%;
+	margin-top: 35px;
+    border-radius: 15px;
+    width: 80%;
+}
+.description{
+	position: relative;
+	left: 5%;
+}
+.extras{
+	position: relative;
+	left: 10%;
+}
+#chart{
+	text-align: center;
+	border-radius: 15px;
+	background: rgba(0, 0, 0,.2);
+	backdrop-filter: blur(50px);
+	bottom: 0;
+	position: absolute;
+	margin-bottom: 20px;
+}

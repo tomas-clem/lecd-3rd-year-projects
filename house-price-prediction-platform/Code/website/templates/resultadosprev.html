@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/resultadosprev.css') }}">
+{% endblock %}
+{% block content %}
+    <h1>{% block title %} Prever o preço do imóvel {% endblock %}</h1>
+    <div class="formulario">
+        <div class="result-container">
+            {% if valor_inserido %}
+                <p id="valor-inserido">Preço inserido: {{ valor_inserido }}</p>
+            {% endif %}
+        </div>
+        <div class="result-container">
+            <h2>O valor previsto é: </h2>
+            <p id="valor-previsto">{{ valor_previsto }}</p>
+        </div>
+        {% if valor_inserido %}
+        <div class="texto">
+            <p> Verde claro - preço dado pelo utilizador está contido no intervalo</p>
+            <p> Amarelo - preço dado pelo utilizador está até 5% acima do intervalo</p>
+            <p> Vermelho -  preço dado pelo utilizador está a mais de 5% acima do intervalo</p>
+            <p> Verde escuro - preço dado pelo utilizador é inferior ao intervalo</p>
+        </div>
+        {% endif %}
+    </div>
+    <script>
+
+        var cor = "{{ cor }}";
+        const valorPrevistoElement = document.getElementById("valor-previsto");
+        if (cor === "green") {
+            valorPrevistoElement.classList.add("green");
+        } else if (cor === "yellow") {
+            valorPrevistoElement.classList.add("yellow");
+        } else if (cor === "darkgreen") {
+            valorPrevistoElement.classList.add("darkgreen");
+        } else if (cor === "red"){
+            valorPrevistoElement.classList.add("red");
+        } else {
+            valorPrevistoElement.classList.add("white"); 
+        }
+    </script>
+{% endblock %}

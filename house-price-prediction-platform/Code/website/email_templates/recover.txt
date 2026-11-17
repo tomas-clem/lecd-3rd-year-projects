@@ -1,0 +1,4 @@
+Subject: Use o link para recuperar a palavra-passe.
+
+Olá {name}, pode utilizar este link  https:/prevemos.duckdns.org/reset?token={code} para recuperar a sua palavra passe.
+Se não tentou recuperar a palavra-passe pode ignorar esta mensagem.

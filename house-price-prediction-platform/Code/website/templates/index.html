@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+    <title>Prevemos</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %} {% endblock %}
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <a href="/">
+      <img style="height: 60px; margin: 5px 9px 5px 9px;" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
+      </a>
+      <span class="logo_name">Prevemos</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="{{url_for('morada')}}">
+          <i class='bx bxs-calculator' ></i>
+          <span class="link_name">Calcule o preço</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{{url_for('morada')}}">Calcule o preço</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Analise de tendências</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Analise de tendências</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-buildings' ></i>
+          <span class="link_name">Casas semelhantes</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Category</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="{{url_for('favorites_page')}}">
+            <i class='bx bx-star' ></i>
+            <span class="link_name">Favoritos</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{{url_for('favorites_page')}}">Favoritos</a></li>
+          {% for house in favorites %}
+          <li><a href="{{url_for('favorites_house',house_id=house.house_id)}}">{{ house.address }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+  </li>
+</ul>
+<div class="logout">
+  <a href="{{url_for('logout')}}">
+    <i class='bx bx-log-out' ></i>
+    <span class="link_name">Logout</span>
+  </a>
+  <!-- <ul class="sub-menu blank">
+    <li><a class="link_name" href="#">Logout</a></li>
+  </ul> -->
+</div>
+
+</div>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text"></span>
+      {% block content %} {% endblock %}
+    </div>
+  </section>
+  {% block scripts %} {% endblock %}
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+</body>
+</html>

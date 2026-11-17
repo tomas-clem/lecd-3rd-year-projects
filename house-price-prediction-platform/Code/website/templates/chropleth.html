@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/choropleth.css') }}">
+{% endblock %}
+{% block scripts %}
+<script type ="text/javascript" src="{{ url_for('static',filename='scripts/choropleth.js') }}"></script>
+{% endblock %}
+{% block content %}
+  <h1>{% block title %} {{title}} {% endblock %}</h1>
+  <div class="formulario"> 
+  <div class="form-container">
+    <div class="form-item">
+      <p class="titulo">Distrito</p>
+      <select id="district" name="district"class="option" required>
+          <option value="">Selecione uma opção</option>
+          <option value="Aveiro">Aveiro</option>
+          <option value="Azores">Açores</option>
+          <option value="Beja">Beja</option>
+          <option value="Braga">Braga</option>
+          <option value="Bragança">Bragança</option>
+          <option value="CasteloBranco">Castelo Branco</option>
+          <option value="Coimbra">Coimbra</option>
+          <option value="Évora">Évora</option>
+          <option value="Faro">Faro</option>
+          <option value="Guarda">Guarda</option>
+          <option value="Leiria">Leiria</option>
+          <option value="Lisboa">Lisboa</option>
+          <option value="Madeira">Madeira</option>
+          <option value="Portalegre">Portalegre</option>
+          <option value="Porto">Porto</option>
+          <option value="Santarém">Santarém</option>
+          <option value="Setúbal">Setúbal</option>
+          <option value="VianadoCastelo">Viana do Castelo</option>
+          <option value="VilaReal">Vila Real</option>
+          <option value="Viseu">Viseu</option>
+      </select>
+      <button>Procurar</button>
+    </div>
+    <div class="form-item">
+      <p class="titulo">Mês</p>
+      <select id="month" name="month"class="option" required>
+          <option value="">Selecione uma opção</option>
+          <option value="Last3monts">Últimos 3 meses</option>
+          <option value="janeiro">Janeiro</option>
+          <option value="março">Março</option>
+          <option value="abril">Abril</option>
+      </select>
+      <button>Procurar</button>
+    </div>
+  </div>
+</div>
+
+<div class="formulario2">
+  <div class="form-container2">
+  <div id="chart1" class="chart_class"></div>
+  <div id="chart2" class="chart_class"></div>
+</div>
+</div>
+
+
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    var graph  = {{graphJSON | safe}};
+    Plotly.plot("chart1",graph,{})
+    var graph  = {{graphJSON2 | safe}};
+    Plotly.plot("chart2",graph,{})
+
+</script>
+{% endblock %}

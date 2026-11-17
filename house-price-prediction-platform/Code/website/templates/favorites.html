@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/favorites.css') }}">
+{% endblock %}
+{% block scripts %}
+<script type ="text/javascript" src="{{ url_for('static',filename='scripts/favorites.js') }}"></script>
+{% endblock %}
+{% block content %}
+<input type="hidden" value="{{lastKey}}" id="last-key" />
+    <h1>{% block title %} Os teus favoritos {% endblock %}</h1>
+    <a class="icon" href="/new-fav">
+        <i class='bx bxs-plus-circle'></i>
+    </a>
+    <ul id="house-list" style="width: 80%; display: inline-block; position: absolute; top: 15%;left: 10%;">
+    {% for house in favorites %}
+        <li style="list-style-type: none;">
+        <a class="house" href="{{url_for('favorites_house',house_id=house.house_id)}}"> 
+            <div>
+                <img class="map" src="https://maps.googleapis.com/maps/api/staticmap?center={{house.lat}},{{house.lon}}&zoom=12&size=200x200&key={google_maps_api_key}" alt="" style="display: inline-block;">
+            </div>
+            <div class="content">
+                <h1>{{house.address}}</h1>
+                <h3>Quartos: {{house.typology}}</h3>
+                <h3>Area: {{house.area}} m2</h3>
+            </div>
+        </a>
+        <button1 type="button" onclick="alert('Imóvel Eliminado')"><a href="/delete?id={{house.house_id}}"><i class='bx bx-trash'></i></a></button1>
+    </li>
+    {% endfor %}
+    </ul>
+    <div class="load-more">
+        <button id="load-more">Load more</button>
+    </div>
+{% endblock %}

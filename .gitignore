@@ -1,0 +1,20 @@
+# Python / Jupyter
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.env
+
+# C build output
+build/
+bin/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Datasets that are not redistributed
+metal_bands_2017_v2.csv

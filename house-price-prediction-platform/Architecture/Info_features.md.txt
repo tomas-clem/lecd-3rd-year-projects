@@ -1,0 +1,20 @@
+# Informações para retirar do idealista:
+
+- Localização  → (distrito, cidade, concelho, freguesia) 
+- Área do imóvel (bruta e útil)
+- Valor do metro quadrado 
+- Valor do imóvel
+- Qualidade da construção
+- Eficiência energética
+- Idade do imóvel 
+- Segurança (categórico, por níveis de segurança)
+- Qualidade de vista (se possível, ex: cemitério ou oceano)
+- Orientação solar
+- Acessibilidades (na área envolvente haver escolas, supermercados, zona tranquila,..)
+- Estado de conservação (pode ser um dado qualitativo - ótimo, bom, médio, mau, péssimo)
+- Tipologia do imóvel/ Planta (ex: T3, T3+1, …)
+- Tipos de habitação (isolada, geminada, em banda, apartamento, condomínio, …)
+- Extras do imóvel (aquecimento central, aspiração central, vidros duplos, funcionalidades inteligentes, Madeira maciça no soalho, mármores e pedras nas cozinhas e casas de banho, varandas/ alpendres, closets, etc  → esta parte provavelmente vai ter de ser com PLN)
+- Facilidades (ex: estacionamento, piscina, elevador, espaços verdes, …)
+
+

@@ -1,0 +1,110 @@
+{% extends 'index.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/prever.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+    <h1>{% block title %} {{title}} {% endblock %}</h1>
+    <div class="formulario">
+        <form id="form" action="{{action}}" method="POST">
+            <input type="hidden" value="{{morada}}" id="morada" name="morada" />
+            <div class="form-container">
+                <div class="form-item">
+                    <p class="titulo">Tipologia<span class="asterisco"> *</span></p>
+                    <select id="q1" name="q1"class="option" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="T0">T0</option>
+                        <option value="T1">T1</option>
+                        <option value="T2">T2</option>
+                        <option value="T3">T3</option>
+                        <option value="T4">T4</option>
+                        <option value="T5">T5</option>
+                        <option value="T6">T6</option>
+                        <option value="T7">T7</option>
+                        <option value="T8">T8</option>
+                        <option value="T9">T9</option>
+                        <option value="T10 a T13">T10 a T13</option>
+                        <option value="T13 a T17">T13 a T17</option>
+                        <option value="T17 a T20">T17 a T20</option>
+                        <option value="Mais de T20">Mais de T20</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <p class="titulo">Tipo de Imóvel<span class="asterisco"> *</span></p>
+                    <select id="q2" name="q2"class="option" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Isolado">Isolado</option>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Casa / Moradia">Casa / Moradia</option>
+                        <option value="Quinta / Monte">Quinta / Monte</option>
+                        <option value="Palácio">Palácio</option>
+                        <option value="Moinho">Moinho</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-item">
+                    <label for="q3" class="titulo">Área Bruta (m<sup>2</sup>)<span class="asterisco"> *</span></label>
+                    <input id="q3" class="text-input" name="q3" type="text" pattern="[0-9]*" required  title="Por favor, insira apenas números neste campo"></input>
+                </div>
+                <div class="form-item">
+                    <label for="q6" class="titulo">Ano de Construção<span class="asterisco"> *</span></label>
+                    <input id="q6" class="text-input" name="q6" type="text" pattern="[0-9]*" required  title="Por favor, insira apenas números neste campo"></input>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-item">
+                    <label for="q4" class="titulo">Área Útil (m<sup>2</sup>)<span class="asterisco"> *</span></label>
+                    <input id="q4" class="text-input" name="q4" type="text" pattern="[0-9]*" required  title="Por favor, insira apenas números neste campo"></input>
+                </div>
+                <div class="form-item">
+                    <p class="titulo">Classe Energética<span class="asterisco"> *</span></p>
+                    <select id="q5" name="q5"class="option" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="B-">B-</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                    </select>
+                </div>
+            </div>  
+            <div class="form-container">
+                <div class="form-item">
+                    <label for="q7" class="titulo">Preço (€)</label>
+                    <input id="q7" class="text-input" name="q7" type="text" pattern="[0-9]*" title="Por favor, insira apenas números neste campo"></input>
+                </div>
+                <div class="form-item" style="padding-top: 5px;">
+                    <span class="titulo">Extras</span>
+                        <select class="js-example-basic-multiple" name="extras[]" style="width: 80%; margin-left: 10px; " multiple="multiple">
+                            <option value=" air conditioning">Ar condicionado</option>
+                            <option value=" swimming pool">Piscina</option>
+                            <option value=" garden">Jardim</option>
+                        </select>
+                </div>  
+            </div> 
+            <div class="form-container">
+                <div class="form-item">
+                    <p class="texto"><span class="asterisco">* </span> Campos de preenchimento obrigatório!</p>
+                </div>
+                <div class="form-item">
+                    <button type="submit" class="botao" onclick="submitForm()">Avançar</button>
+                </div>
+                
+            </div>
+            </form>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type ="text/javascript" src="{{ url_for('static',filename='scripts/prever.js') }}"></script>
+{% endblock %}
